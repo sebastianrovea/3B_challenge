@@ -1,0 +1,13 @@
+*.log
+*.sql
+*.sqlite
+__pycache__
+*.sqlite3
+venv
+env
+coverage.xml
+.coverage
+htmlcov
+.env
+.venv
+migrations
