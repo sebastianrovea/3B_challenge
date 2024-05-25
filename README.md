@@ -43,55 +43,43 @@ product (1) <---> (N) order_line (N) <---> (1) order
 ### Deploy locally to validate services
 (Required to have installed python3 and virtualenv)
 1. Create and activate virtual enviroment:
-```bash
-    a. python3 -m venv venv
-    b. source venv/bin/activate (Linux)
-    b. source venv/Scripts/activate (Windows)
-```
+    a. ***python3 -m venv venv***
+    b. ***source venv/bin/activate (Linux)***
+    b. ***source venv/Scripts/activate (Windows)***
 2. Install dependecies:
-```bash
-    a. pip install -r requirements.txt
-```
+    a. ***pip install -r requirements.txt***
 3. Create and up local database to test:
-```bash
-    a. py manage.py makemigrations business_logic
-    b. py manage.py migrate
-```
+    a. ***py manage.py makemigrations business_logic***
+    b. ***py manage.py migrate***
 4. Run server:
-```bash
-    a. py manage.py runserver 8000 (Elegir puerto disponible, default es 8000)
+    a. ***py manage.py runserver 8000*** (Elegir puerto disponible, default es 8000)
     b. Validate services: A Postman collection is shared to validate services
     c. See documentation running this url: http://localhost:8000/swagger/ in your local internet navigator.
-```
 5. Database is empty.
     Use service to add new products, add stock, see the products or generate an order.
     Use Postman collection shared to validate different services and fill Db with information.
 6. Run cron to check lower stock:
     a. Open another console
-    b. Activate virtual enviroment: source venv/bin/activate
-    c. configure the execution time using the variable TIME_CHECK_LOWER_STOCK of the business_logic/util/const.py file
+    b. Activate virtual enviroment: ***source venv/bin/activate***
+    c. configure the execution time using the variable **TIME_CHECK_LOWER_STOCK** of the business_logic/util/const.py file
         Now is setting with 10 seconds.
-    d. Run: py manage.py runserver_cron
+    d. Run: ***py manage.py runserver_cron***
     e. In this console, you will see next text each 10 seconds: "Starting job to check lower stock"
         and you will see the alert if exist a lower stock.
 7. Close your server and cron:
     a. Quit the server with CTRL-BREAK in your console
     b. Quit the cron with CTRL-BREAK in your another console
 8. Deactivate virtual enviroment:
-```bash
-    a. deactivate
-```
+    a. ***deactivate***
 
 ## Testing
-Open virtual enviroment (source venv/bin/activate)
-Run this command: ***python3 -m pytest test/ --cov=.***
+Open virtual enviroment (source venv/Script/activate)
+Run this command: ***py manage.py test business_logic***
 
 ## Documentation
-
 You could see the documentation running this url in your explorer:
 You could see step by step following the "Deploy locally to validate services" steps.
     Point 4: Run server, subsection c: See documentation
-
 ```bash
 http://localhost:8000/swagger/
 ```

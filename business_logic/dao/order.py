@@ -1,6 +1,6 @@
 from ..models import Order, OrderLine
 from ..utils.loggers import log
-from ..utils.const import ProductError
+from ..utils.const import OrderError
 
 
 class OrderDB:
@@ -17,7 +17,7 @@ class OrderDB:
 
         except Exception as e:
             log.error("create order method error: {}".format(e))
-            raise ProductError("Problem to create order")
+            raise OrderError("Problem to create order")
 
 
     @classmethod
@@ -32,4 +32,4 @@ class OrderDB:
 
         except Exception as e:
             log.error("create order line method error: {}".format(e))
-            raise ProductError("Problem to create order line")
+            raise OrderError("Problem to create order line")

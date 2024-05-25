@@ -26,4 +26,9 @@ class ProductError(Exception):
     pass
 
 
+class OrderError(Exception):
+    """Personalized Error for Order dao"""
+    pass
+
+
 TIME_CHECK_LOWER_STOCK = 10
