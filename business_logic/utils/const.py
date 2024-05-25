@@ -24,3 +24,6 @@ class SuccessMessage(Enum):
 class ProductError(Exception):
     """Personalized Error for Product dao"""
     pass
+
+
+TIME_CHECK_LOWER_STOCK = 10
