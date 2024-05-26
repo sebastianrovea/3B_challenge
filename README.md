@@ -54,13 +54,13 @@ product (1) <---> (N) order_line (N) <---> (1) order
 4. Run server:
     a. ***py manage.py runserver 8000*** (Elegir puerto disponible, default es 8000)
     b. Validate services: A Postman collection is shared to validate services
-    c. See documentation running this url: http://localhost:8000/swagger/ in your local internet navigator.
+    c. See **documentation** running this url: http://localhost:8000/swagger/ in your local internet navigator.
 5. Database is empty.
     Use service to add new products, add stock, see the products or generate an order.
     Use Postman collection shared to validate different services and fill Db with information.
 6. Run cron to check lower stock:
     a. Open another console
-    b. Activate virtual enviroment: ***source venv/bin/activate***
+    b. Activate virtual enviroment: ***source venv/Script/activate***
     c. configure the execution time using the variable **TIME_CHECK_LOWER_STOCK** of the business_logic/util/const.py file
         Now is setting with 10 seconds.
     d. Run: ***py manage.py runserver_cron***

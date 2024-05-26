@@ -1,4 +1,4 @@
-from datetime import datetime
+from django.utils import timezone
 
 from django.db import models
 
@@ -15,7 +15,7 @@ class Product(models.Model):
 
 class Order(models.Model):
     client = models.CharField(max_length=55)
-    date_order = models.DateTimeField(default=datetime.now())
+    date_order = models.DateTimeField(default=timezone.now)
 
     def __str__(self) -> str:
         return str(self.id)
